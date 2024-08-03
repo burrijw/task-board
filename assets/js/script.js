@@ -65,7 +65,6 @@ function renderTaskList() {
 
 // Function to handle adding a new task
 function handleAddTask(event) {
-  console.log("hello from handleAddTask()");
   event.preventDefault();
 
   let title = $("#task-title").val();
@@ -81,7 +80,7 @@ function handleAddTask(event) {
   let taskCard = createTaskCard(task);
   $("#todo-cards").append(taskCard);
 
-  // do this before you hide the modal or the reset()
+  // JB: Do this reset before you hide the modal or the reset()
   // will be undefined because the form won't be in
   // the DOM when you call it.
   $("#task-form")[0].reset();
@@ -132,7 +131,6 @@ function handleDrop(event, ui) {
 
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
-  console.log("hello from document.ready()");
   renderTaskList();
 
   $("#formModal").on("submit", handleAddTask);
